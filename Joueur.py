@@ -18,7 +18,7 @@ valeurs = {
 }
 
 class Joueur:
-    def __init__(self, nom : str , nb_cartes : Carte):
+    def __init__(self, nom : str , nb_cartes : int):
         self._nom = nom
         self._nb_cartes = nb_cartes
         self._mainJoueur = []
