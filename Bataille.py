@@ -24,18 +24,30 @@ valeurs = {
 
 class Bataille :
     def __init__(self,nom1 : str ,nom2 : str, nb_cartes = 52)  :
+        """
+        :param nom1: Nom du joueur n°1
+        :param nom2: Nom du joueur n°2
+        :param nb_cartes: Nombre de cartes du jeu (par défaut à 52)
+        :return : les joueurs
+        """
         #création du jeu
         self.jeu = JeuCarte(nb_cartes)
         #création des joueurs
         self.j1 = Joueur(nom1,int(self.jeu.get_taille()/2))
         self.j2 = Joueur(nom2,int(self.jeu.get_taille()/2))
 
+    def get_joueur(self):
+        return self.j1, self.j2
+
     def jouer(self) :
+        """
+        Permet de simuler une partie de bataille
+        """
         self.jeu.creer_jeu() #ajout des cartes dans le jeu
         self.jeu.melanger() #melange des cartes
 
         #attribution des mains aux joueurs
-        liste_distribution = self.jeu.distribuer_jeu(self.jeu.get_taille(),2)
+        liste_distribution = self.jeu.distribuer_jeu(self.j1.get_nb_cartes(),2)
         self.j1.set_main(liste_distribution[0])
         self.j2.set_main(liste_distribution[1])
 
@@ -84,4 +96,18 @@ class Bataille :
             print(f"le joueur {self.j1.get_nom()} a gagné la partie")
         else :
             print(f"le joueur {self.j2.get_nom()} a gagné la partie")
-    
+
+
+    def start(self):
+        self.jeu.creer_jeu()  # ajout des cartes dans le jeu
+        self.jeu.melanger()  # melange des cartes
+        liste_distribution = self.jeu.distribuer_jeu(self.j1.get_nb_cartes(), 2)
+        self.j1.set_main(liste_distribution[0])
+        self.j2.set_main(liste_distribution[1])
+
+
+    def test(self) :
+        carte1 = self.j1.jouer_carte()
+        carte2 = self.j2.jouer_carte()
+        return carte1,carte2
+
