@@ -4,13 +4,13 @@ Projet de NSI
 
 REGLES DU JEU :
 
-  -soit 52 soit 32 cartes
+    -soit 52 soit 32 cartes
 
-  -chaque joueur commence la partie avec la moitié des cartes
+    -chaque joueur commence la partie avec la moitié des cartes
 
-  -le joueur qui n'a plus de cartes perd
+    -le joueur qui n'a plus de cartes perd
 
-  -en cas de bataille (2 cartes de même valeur) les joueurs posent une carte face cachée puis une face visible
+    -en cas de bataille (2 cartes de même valeur) les joueurs posent une carte face cachée puis une face visible
 
 
 UTILITE DES FICHIERS :
