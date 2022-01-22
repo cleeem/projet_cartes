@@ -58,4 +58,4 @@ UTILITE DES FICHIERS :
     -joueur : lance la partie
   
  
-  
+(ce projet dispose d'un affichage avec pygame)
