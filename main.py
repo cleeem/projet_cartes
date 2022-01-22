@@ -29,7 +29,7 @@ valeurs = {
 
 
 #affichage avec pygame
-c=Bataille("Kura le noir","Bonsoir",32)
+c=Bataille("joueur 1","joueur 2",32)
 j1,j2 = c.get_joueur()
 c.start()
 
