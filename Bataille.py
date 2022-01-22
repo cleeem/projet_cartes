@@ -110,6 +110,3 @@ class Bataille :
         self.j2.set_main(liste_distribution[1])
 
 
-    def est_fini(self):
-        return self.j1.get_nb_cartes()>0 and self.j2.get_nb_cartes() > 0
-
