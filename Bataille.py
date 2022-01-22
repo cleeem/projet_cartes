@@ -98,6 +98,10 @@ class Bataille :
             print(f"le joueur {self.j2.get_nom()} a gagné la partie")
 
 
+    """
+    La suite est nécessaire pour l'affichage pygame
+    """
+
     def start(self):
         self.jeu.creer_jeu()  # ajout des cartes dans le jeu
         self.jeu.melanger()  # melange des cartes
@@ -106,8 +110,6 @@ class Bataille :
         self.j2.set_main(liste_distribution[1])
 
 
-    def test(self) :
-        carte1 = self.j1.jouer_carte()
-        carte2 = self.j2.jouer_carte()
-        return carte1,carte2
+    def est_fini(self):
+        return self.j1.get_nb_cartes()>0 and self.j2.get_nb_cartes() > 0
 

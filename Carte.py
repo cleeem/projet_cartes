@@ -88,17 +88,30 @@ class Carte :
         retourne un affichage "agréable" en console
         :return: str
         """
-        if self.get_couleur() == "CARREAU" :
-            return f"|{self.get_nom()[0]}|♦"
+        if  self.get_nom() == "10" :
+            if self.get_couleur() == "CARREAU" :
+                return f"|{self.get_nom()}|♦"
 
-        elif self.get_couleur() == "COEUR" :
-            return f"|{self.get_nom()[0]}|♥"
-        
-        elif self.get_couleur() == "TREFLE" :
-            return f"|{self.get_nom()[0]}|♣"
-        
-        elif self.get_couleur() == "PIQUE" :
-            return f"|{self.get_nom()[0]}|♠"
+            elif self.get_couleur() == "COEUR" :
+                return f"|{self.get_nom()}|♥"
+            
+            elif self.get_couleur() == "TREFLE" :
+                return f"|{self.get_nom()}|♣"
+            
+            elif self.get_couleur() == "PIQUE" :
+                return f"|{self.get_nom()}|♠"
+        else :
+            if self.get_couleur() == "CARREAU" :
+                return f"|{self.get_nom()[0]}|♦"
+
+            elif self.get_couleur() == "COEUR" :
+                return f"|{self.get_nom()[0]}|♥"
+            
+            elif self.get_couleur() == "TREFLE" :
+                return f"|{self.get_nom()[0]}|♣"
+            
+            elif self.get_couleur() == "PIQUE" :
+                return f"|{self.get_nom()[0]}|♠"
 
     def __repr__(self) -> str:
         """
