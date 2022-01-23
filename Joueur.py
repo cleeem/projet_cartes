@@ -74,3 +74,15 @@ class Joueur:
         """
         res = f"{self._nom} à la main : \n{self._mainJoueur}"
         return res
+
+
+def test_joueur() :
+    j1 = Joueur("j1",16)
+    print(j1.get_nom())
+    print(j1.get_nb_cartes())
+    j1.set_main([Carte("As","COEUR"),Carte("As","CARREAU"),Carte("As","TREFLE"),Carte("As","PIQUE")])
+    print(j1)
+    j1.inserer_main([Carte("Roi","COEUR"),Carte("Roi","CARREAU"),Carte("Roi","TREFLE"),Carte("Roi","PIQUE")])
+    print(j1)
+
+#test_joueur()

@@ -90,7 +90,7 @@ class Bataille :
                 print(f"Le joueur {self.j2.get_nom()} récupère {len(table)} cartes, il en a : {self.j2.get_nb_cartes()}\nLe joueur {self.j1.get_nom()} en a : {int(self.j1.get_nb_cartes())}")
             print("")
 
-            #time.sleep(0.75)
+            time.sleep(0.75)
 
         if self.j1.get_nb_cartes()>self.j2.get_nb_cartes() : #celui qui possède le plus de carte gagne
             print(f"le joueur {self.j1.get_nom()} a gagné la partie")

@@ -119,3 +119,14 @@ class Carte :
         :return: str
         """
         return f"{self._nom} de {self._couleur}"
+
+
+
+def test_carte() :
+    carte = Carte("As","COEUR")
+    print(carte.get_nom())
+    print(carte.get_couleur())
+    print(carte.get_valeur())
+    print(carte)
+
+#test_carte()

@@ -60,6 +60,7 @@ class JeuCarte :
         on mélange le jeu à l'aide la commande shuffle
         """
         shuffle(self._jeu)
+        
     
     def distribuer(self) -> Carte:
         """
@@ -95,3 +96,17 @@ class JeuCarte :
         for elt in self._jeu :
             res = res + str(elt) +", "
         return res
+
+
+def test_jeu() :
+    jeu = JeuCarte(32)
+    jeu.creer_jeu()
+    print(jeu.get_taille())
+    print(jeu)
+    jeu.melanger()
+    print(jeu)
+    print(jeu.distribuer())
+    print(jeu.distribuer_jeu(10,2))
+    print(jeu.get_taille())
+    
+#test_jeu()

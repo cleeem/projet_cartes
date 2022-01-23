@@ -1,6 +1,9 @@
 # projet_cartes
 Projet de NSI 
 
+Pour lancer le jeu, utiliser le fichier main.py.
+Ce projet dispose d'un affichage avec pygame et si le programme ne marche pas, utiliser REPLIT pour l'affichage
+(cependant l'affichage console marche partout)
 
 REGLES DU JEU :
 
@@ -58,4 +61,3 @@ UTILITE DES FICHIERS :
     -joueur : lance la partie
   
  
-(ce projet dispose d'un affichage avec pygame)
