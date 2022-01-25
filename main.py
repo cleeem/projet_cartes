@@ -22,6 +22,7 @@ valeurs = {
     "Roi" : 13 ,
     "As" : 14 ,
 }
+
 """
 #affichage en console
 b=int(input("Combien de cartes ?"))
@@ -34,7 +35,8 @@ elif b==52:
 else:
   print("Le jeu de bataille se joue soit avec 32 cartes, soit avec 52. ")
 
-"""
+#"""
+
 
 #affichage avec pygame
 c=Bataille("Bonjour","Bonsoir",32)
@@ -281,4 +283,4 @@ game.run()
 
 pygame.quit()
 
-
+#"""
