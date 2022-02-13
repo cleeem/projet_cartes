@@ -2,7 +2,7 @@
 Projet de NSI 
 
 Pour lancer le jeu, utiliser le fichier main.py.
-Ce projet dispose d'un affichage avec pygame et si le programme ne marche pas, utiliser REPLIT pour l'affichage
+Ce projet dispose d'un affichage avec pygame et si le programme ne marche pas dans votre IDE classique (pour cause de problèmes pygame), nous vous conseillons de le lancer via l'invité de commande windows 
 (cependant l'affichage console marche partout)
 
 REGLES DU JEU :
