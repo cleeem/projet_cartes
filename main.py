@@ -23,26 +23,6 @@ valeurs = {
     "As" : 14 ,
 }
 
-"""
-#affichage en console
-b=int(input("Combien de cartes ?"))
-if b==32:
-  B = Bataille("j1","j2",32)
-  B.jouer()
-elif b==52:
-  B = Bataille("j1","j2",52)
-  B.jouer()
-else:
-  print("Le jeu de bataille se joue soit avec 32 cartes, soit avec 52. ")
-
-#"""
-
-
-#affichage avec pygame
-c=Bataille("Bonjour","Bonsoir",32)
-j1,j2 = c.get_joueur()
-c.start()
-
 def get_url(carte : Carte) :
     couleur = carte.get_couleur().lower()
     nom = carte.get_nom().lower()
@@ -52,7 +32,6 @@ def get_url(carte : Carte) :
     else :
         url = f"images_cartes/{nom}_{couleur}.png"
         return url
-
 
 class Game:
     def __init__(self, screen,font):
@@ -144,8 +123,8 @@ class Game:
         screen.blit(image_2, (1080 - (100 + 71), 350))
 
         arriere = pygame.image.load("images_cartes/arriere.jpg")
-        screen.blit(arriere, (100, 370))
-        screen.blit(arriere, (1080 - (100 + 71), 370))
+        screen.blit(arriere, (100, 350+self.pixel_bataille))
+        screen.blit(arriere, (1080 - (100 + 71), 350+self.pixel_bataille))
 
         texte = f"BATAILLE"
         aff = self.font.render(texte, True, "black")
@@ -160,8 +139,8 @@ class Game:
         url_2 = get_url(self.carte2)
         image_1 = pygame.image.load(url_1)
         image_2 = pygame.image.load(url_2)
-        screen.blit(image_1, (100, 370))
-        screen.blit(image_2, (1080 - (100 + 71), 370))
+        screen.blit(image_1, (100, 350+self.pixel_bataille))
+        screen.blit(image_2, (1080 - (100 + 71), 350+self.pixel_bataille))
 
         pygame.display.flip()
 
@@ -240,7 +219,12 @@ class Game:
 
             self.display()
 
+            self.pixel_bataille = 0
+
             while self.carte1 == self.carte2 and (j1.get_nb_cartes()>=2 and j2.get_nb_cartes()>=2) :
+
+                self.pixel_bataille += 20
+
                 table.append(j1.jouer_carte())
                 table.append(j2.jouer_carte())
 
@@ -248,6 +232,8 @@ class Game:
                 table.append(self.carte2)
 
                 self.bataille()
+
+            self.pixel_bataille = 0
 
             if self.carte1.get_valeur() > self.carte2.get_valeur():
                 j1.inserer_main(table)
@@ -265,8 +251,6 @@ class Game:
 
             pygame.display.flip()
 
-
-
     def run(self):
         while self.running:
             self.handling_events()
@@ -274,13 +258,33 @@ class Game:
             self.clock.tick(60)
             self.nb_tours += 1
             time.sleep(1)
+            
 
-pygame.init()
-screen = pygame.display.set_mode((1080,720))
-font = pygame.font.SysFont("monospace",30)
-game = Game(screen,font)
-game.run()
 
-pygame.quit()
+nb=int(input("choississez l'affichage : \n 1 pour la console \n 2 pour pygame"))
+if nb==1 :
+#affichage en console
+    b=int(input("Combien de cartes ? "))
+    if b==32:
+        B = Bataille("j1","j2",32)
+        B.jouer()
+    elif b==52:
+        B = Bataille("j1","j2",52)
+        B.jouer()
+    else:
+        print("Le jeu de bataille se joue soit avec 32 cartes, soit avec 52. ")
 
-#"""
+elif nb==2 :
+    #affichage avec pygame
+    c=Bataille("Bonjour","Bonsoir",32)
+    j1,j2 = c.get_joueur()
+    c.start()
+
+    pygame.init()
+    screen = pygame.display.set_mode((1080,720))
+    font = pygame.font.SysFont("monospace",30)
+    game = Game(screen,font)
+    game.run()
+
+    pygame.quit()
+
