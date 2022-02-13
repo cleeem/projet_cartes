@@ -89,7 +89,7 @@ class JeuCarte :
 
     def __str__(self) -> str:
         """
-        méthode d'afichage
+        méthode d'affichage
         :return: str
         """
         res = ""

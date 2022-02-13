@@ -27,7 +27,7 @@ class Joueur:
         self._nb_cartes = nb_cartes
         self._mainJoueur = []
 
-    #seteur et geteur
+    #setter et getter
     def set_main(self, main : list) -> None:
         """
         Ajoute des cartes dans la main du joueur
