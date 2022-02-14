@@ -261,15 +261,17 @@ class Game:
             
 
 
-nb=int(input("choississez l'affichage : \n 1 pour la console \n 2 pour pygame"))
+nb=int(input("choississez l'affichage : \n 1 pour la console \n 2 pour pygame \n"))
+j1 = str(input("entrez le nom du premier joueur "))
+j2 = str(input("entrez le nom du deuxième joueur "))
+b=int(input("Combien de cartes ? "))
 if nb==1 :
 #affichage en console
-    b=int(input("Combien de cartes ? "))
     if b==32:
-        B = Bataille("j1","j2",32)
+        B = Bataille(j1,j2,32)
         B.jouer()
     elif b==52:
-        B = Bataille("j1","j2",52)
+        B = Bataille(j1,j2,52)
         B.jouer()
     else:
         print("Le jeu de bataille se joue soit avec 32 cartes, soit avec 52. ")
@@ -287,4 +289,3 @@ elif nb==2 :
     game.run()
 
     pygame.quit()
-
