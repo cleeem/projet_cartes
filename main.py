@@ -278,7 +278,7 @@ if nb==1 :
 
 elif nb==2 :
     #affichage avec pygame
-    c=Bataille("Bonjour","Bonsoir",32)
+    c=Bataille("Joueur 1","Joueur 2",32)
     j1,j2 = c.get_joueur()
     c.start()
 
