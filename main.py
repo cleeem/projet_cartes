@@ -68,7 +68,7 @@ class Game:
 
         nb_carte_1 = j1.get_nb_cartes()
         nb_carte_2 = j2.get_nb_cartes()
-        texte = f"Joueur 1 : {nb_carte_1} cartes || Joueur 2  : {nb_carte_2} cartes"
+        texte = f"{j1.get_nom()} : {nb_carte_1} cartes || {j2.get_nom()}  : {nb_carte_2} cartes"
         aff = self.font.render(texte, True, "black")
         screen.blit(aff, (100, 100))
 
@@ -111,7 +111,7 @@ class Game:
 
         nb_carte_1 = j1.get_nb_cartes()
         nb_carte_2 = j2.get_nb_cartes()
-        texte = f"Joueur 1 : {nb_carte_1} cartes || Joueur 2  : {nb_carte_2} cartes"
+        texte = f"{j1.get_nom()}: {nb_carte_1} cartes || {j2.get_nom()}  : {nb_carte_2} cartes"
         aff = self.font.render(texte, True, "black")
         screen.blit(aff, (100, 100))
 
@@ -278,14 +278,17 @@ if nb==1 :
 
 elif nb==2 :
     #affichage avec pygame
-    c=Bataille("Joueur 1","Joueur 2",32)
-    j1,j2 = c.get_joueur()
-    c.start()
-
-    pygame.init()
-    screen = pygame.display.set_mode((1080,720))
-    font = pygame.font.SysFont("monospace",30)
-    game = Game(screen,font)
-    game.run()
-
-    pygame.quit()
+    if b==32 or b==52 :
+        c=Bataille(j1,j2,b)
+        j1,j2 = c.get_joueur()
+        c.start()
+    
+        pygame.init()
+        screen = pygame.display.set_mode((1080,720))
+        font = pygame.font.SysFont("monospace",30)
+        game = Game(screen,font)
+        game.run()
+    
+        pygame.quit()
+    else:
+        print("nombre de carte incorrect")
